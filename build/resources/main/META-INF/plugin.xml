@@ -1,6 +1,6 @@
 <idea-plugin>
   <idea-version since-build="232" />
-  <version>2026.2.1</version>
+  <version>2026.2.2</version>
   <id>com.jakubjirak.flakytestdetector</id>
   <name>Flaky Test Detector</name>
   <vendor email="jakub@jirak.dev" url="https://github.com/jakubjirak">Jakub Jirák</vendor>

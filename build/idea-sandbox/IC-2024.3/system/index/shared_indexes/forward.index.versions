@@ -27,7 +27,7 @@ shared.index.file.content.hash.forward.index.sih.KotlinTopLevelCallableByPackage
 shared.index.file.content.hash.forward.index.sih.gr.script.fqn.s:1
 shared.index.file.content.hash.forward.index.sih.java.source.module.name:2
 shared.index.file.content.hash.forward.index.sih.markdown.header:1
-shared.index.file.content.hash.forward.index.base:-9373
+shared.index.file.content.hash.forward.index.base:14138
 shared.index.file.content.hash.forward.index.sih.java.method.name:1
 shared.index.file.content.hash.forward.index.sih.gr.annot.method.name:1
 shared.index.file.content.hash.forward.index.sih.org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeFqNameIndex:1
@@ -63,8 +63,8 @@ shared.index.file.content.hash.forward.index.sih.html5.custom.attributes.index:2
 shared.index.file.content.hash.forward.index.sih.org.jetbrains.kotlin.idea.stubindex.KotlinJvmNameAnnotationIndex:1
 shared.index.file.content.hash.forward.index.sih.dom.namespaceKey:1
 shared.index.file.content.hash.forward.index.sih.gr.script.class:1
-shared.index.file.content.hash.forward.index.sih.org.jetbrains.kotlin.idea.stubindex.KotlinFullClassNameIndex:1
 shared.index.file.content.hash.forward.index.sih.KotlinTopLevelPropertyByPackageIndex:1
+shared.index.file.content.hash.forward.index.sih.org.jetbrains.kotlin.idea.stubindex.KotlinFullClassNameIndex:1
 shared.index.file.content.hash.forward.index.sih.org.jetbrains.kotlin.idea.stubindex.KotlinAnnotationsIndex:1
 shared.index.file.content.hash.forward.index.sih.KotlinProbablyContractedFunctionShortNameIndex:1
 shared.index.file.content.hash.forward.index.sih.KotlinTopLevelExtensionsByReceiverTypeIndex:1
