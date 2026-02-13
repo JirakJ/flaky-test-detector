@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.jakubjirak.flakytestdetector.core.FreemiumGateTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-02-13T21:01:05" hostname="Jakub--MacBook-Pro.local" time="0.003">
+  <properties/>
+  <testcase name="free tier history is 30 days()" classname="com.jakubjirak.flakytestdetector.core.FreemiumGateTest" time="0.0"/>
+  <testcase name="free tier cannot track tests at limit()" classname="com.jakubjirak.flakytestdetector.core.FreemiumGateTest" time="0.0"/>
+  <testcase name="free tier can track tests under limit()" classname="com.jakubjirak.flakytestdetector.core.FreemiumGateTest" time="0.001"/>
+  <testcase name="feature constants are defined()" classname="com.jakubjirak.flakytestdetector.core.FreemiumGateTest" time="0.0"/>
+  <testcase name="max free tests is 500()" classname="com.jakubjirak.flakytestdetector.core.FreemiumGateTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

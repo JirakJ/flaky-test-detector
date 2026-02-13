@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.jakubjirak.flakytestdetector.core.FlakinessCalculatorTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-02-13T21:01:05" hostname="Jakub--MacBook-Pro.local" time="0.045">
+  <properties/>
+  <testcase name="skipped results are excluded from calculation()" classname="com.jakubjirak.flakytestdetector.core.FlakinessCalculatorTest" time="0.017"/>
+  <testcase name="categorize returns correct category for scores()" classname="com.jakubjirak.flakytestdetector.core.FlakinessCalculatorTest" time="0.02"/>
+  <testcase name="score is zero for single result()" classname="com.jakubjirak.flakytestdetector.core.FlakinessCalculatorTest" time="0.001"/>
+  <testcase name="score is zero for empty results()" classname="com.jakubjirak.flakytestdetector.core.FlakinessCalculatorTest" time="0.001"/>
+  <testcase name="meetsMinimumRuns returns false when not enough runs()" classname="com.jakubjirak.flakytestdetector.core.FlakinessCalculatorTest" time="0.001"/>
+  <testcase name="meetsMinimumRuns returns true when enough runs()" classname="com.jakubjirak.flakytestdetector.core.FlakinessCalculatorTest" time="0.001"/>
+  <testcase name="trend is stable when not enough data()" classname="com.jakubjirak.flakytestdetector.core.FlakinessCalculatorTest" time="0.001"/>
+  <testcase name="score is zero for all passing tests()" classname="com.jakubjirak.flakytestdetector.core.FlakinessCalculatorTest" time="0.0"/>
+  <testcase name="score is 50 for single change in middle()" classname="com.jakubjirak.flakytestdetector.core.FlakinessCalculatorTest" time="0.0"/>
+  <testcase name="score is 100 for alternating pass and fail()" classname="com.jakubjirak.flakytestdetector.core.FlakinessCalculatorTest" time="0.001"/>
+  <testcase name="score is zero for all failing tests()" classname="com.jakubjirak.flakytestdetector.core.FlakinessCalculatorTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

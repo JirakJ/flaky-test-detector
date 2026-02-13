@@ -1,0 +1,57 @@
+<idea-plugin>
+  <idea-version since-build="232" />
+  <version>2026.2.1</version>
+  <id>com.jakubjirak.flakytestdetector</id>
+  <name>Flaky Test Detector</name>
+  <vendor email="jakub@jirak.dev" url="https://github.com/jakubjirak">Jakub Jirák</vendor>
+  <description><![CDATA[<h2>Flaky Test Detector</h2>
+    <p>Detect, track, and visualize flaky tests directly in your IDE. Automatically records test run
+    history, calculates flakiness scores, and highlights unreliable tests with gutter icons and
+    a dedicated dashboard.</p>
+
+    <h3>Free Features</h3>
+    <ul>
+        <li><b>Test History Tracking</b> — automatically records pass/fail/error/skip for every test run (up to 500 tests)</li>
+        <li><b>Flakiness Score</b> — percentage-based score showing how unstable each test is</li>
+        <li><b>Gutter Icons</b> — colored icons next to @Test annotations indicating flakiness level</li>
+        <li><b>Dashboard</b> — tool window with sortable table, sparkline history, and trend indicators</li>
+        <li><b>Quarantine</b> — manually mark tests as known-flaky</li>
+        <li><b>Rerun Flaky Tests</b> — run only tests with non-zero flakiness</li>
+    </ul>
+
+    <h3>Pro Features ($5/month)</h3>
+    <ul>
+        <li><b>Unlimited Tests</b> — track more than 500 tests</li>
+        <li><b>Extended History</b> — beyond 30 days retention</li>
+        <li><b>Trend Charts</b> — visualize flakiness over time</li>
+        <li><b>Export</b> — JSON, CSV, HTML reports</li>
+        <li><b>Git Correlation</b> — link flakiness to commits</li>
+        <li><b>Auto-Quarantine</b> — automatically quarantine highly unstable tests</li>
+    </ul>]]></description>
+  <depends>com.intellij.modules.platform</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <projectService serviceImplementation="com.jakubjirak.flakytestdetector.storage.FlakyTestStorage" />
+    <toolWindow id="Flaky Tests" anchor="bottom" secondary="true" icon="AllIcons.Nodes.JunitTestMark" factoryClass="com.jakubjirak.flakytestdetector.ui.FlakyTestToolWindowFactory" />
+    <applicationConfigurable id="com.jakubjirak.flakytestdetector.settings" parentId="tools" displayName="Flaky Test Detector" instance="com.jakubjirak.flakytestdetector.settings.FlakyTestConfigurable" />
+    <applicationService serviceImplementation="com.jakubjirak.flakytestdetector.settings.FlakyTestSettings" />
+    <applicationService serviceImplementation="com.jakubjirak.flakytestdetector.core.FreemiumGate" />
+    <testStatusListener implementation="com.jakubjirak.flakytestdetector.listener.FlakyTestExecutionListener" />
+    <postStartupActivity implementation="com.jakubjirak.flakytestdetector.FlakyTestStartupActivity" />
+    <notificationGroup id="Flaky Test Detector" displayType="BALLOON" toolWindowId="Flaky Tests" />
+  </extensions>
+  <actions>
+    <action id="com.jakubjirak.flakytestdetector.RerunFlakyTests" class="com.jakubjirak.flakytestdetector.actions.RerunFlakyTestsAction" text="Rerun Flaky Tests" description="Rerun all tests with non-zero flakiness score" icon="AllIcons.Actions.Rerun">
+      <keyboard-shortcut first-keystroke="alt shift F" keymap="$default" />
+      <add-to-group group-id="ToolsMenu" anchor="last" />
+    </action>
+    <action id="com.jakubjirak.flakytestdetector.QuarantineTest" class="com.jakubjirak.flakytestdetector.actions.QuarantineTestAction" text="Quarantine Test" description="Toggle quarantine status on the selected test" icon="AllIcons.Actions.Pause">
+      <add-to-group group-id="ToolsMenu" anchor="last" />
+    </action>
+    <action id="com.jakubjirak.flakytestdetector.ViewHistory" class="com.jakubjirak.flakytestdetector.actions.ViewHistoryAction" text="View Flaky Test History" description="Open the Flaky Tests tool window" icon="AllIcons.Actions.Preview">
+      <add-to-group group-id="ToolsMenu" anchor="last" />
+    </action>
+    <action id="com.jakubjirak.flakytestdetector.ClearHistory" class="com.jakubjirak.flakytestdetector.actions.ClearHistoryAction" text="Clear Flaky Test History" description="Clear all recorded test history" icon="AllIcons.Actions.GC">
+      <add-to-group group-id="ToolsMenu" anchor="last" />
+    </action>
+  </actions>
+</idea-plugin>
