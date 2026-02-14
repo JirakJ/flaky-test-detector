@@ -58,7 +58,7 @@
         <testStatusListener
                 implementation="com.jakubjirak.flakytestdetector.listener.FlakyTestExecutionListener"/>
 
-        <postStartupActivity
+        <projectActivity
                 implementation="com.jakubjirak.flakytestdetector.FlakyTestStartupActivity"/>
 
         <notificationGroup
