@@ -5,31 +5,35 @@
     <vendor email="jakub@jirak.dev" url="https://github.com/jakubjirak">Jakub Jirák</vendor>
 
     <description><![CDATA[
-    <h2>Flaky Test Detector</h2>
-    <p>Detect, track, and visualize flaky tests directly in your IDE. Automatically records test run
-    history, calculates flakiness scores, and highlights unreliable tests with gutter icons and
-    a dedicated dashboard.</p>
+<h2>Flaky Test Detector</h2>
+<p>
+  Flaky tests erode team confidence and waste CI minutes. Flaky Test Detector automatically tracks test
+  execution history, calculates flakiness scores, and surfaces unstable tests with visual gutter icons
+  and a sortable dashboard — so you can fix or quarantine them fast.
+</p>
 
-    <h3>Free Features</h3>
-    <ul>
-        <li><b>Test History Tracking</b> — automatically records pass/fail/error/skip for every test run (up to 500 tests)</li>
-        <li><b>Flakiness Score</b> — percentage-based score showing how unstable each test is</li>
-        <li><b>Gutter Icons</b> — colored icons next to @Test annotations indicating flakiness level</li>
-        <li><b>Dashboard</b> — tool window with sortable table, sparkline history, and trend indicators</li>
-        <li><b>Quarantine</b> — manually mark tests as known-flaky</li>
-        <li><b>Rerun Flaky Tests</b> — run only tests with non-zero flakiness</li>
-    </ul>
+<h2>Key Features</h2>
+<ul>
+  <li><b>Automatic History Tracking</b> — Records pass/fail outcomes for every test execution</li>
+  <li><b>Flakiness Score</b> — Percentage-based score calculated from execution history</li>
+  <li><b>Gutter Icons</b> — Inline visual indicators showing test stability at a glance</li>
+  <li><b>Sortable Dashboard</b> — Table view with sparkline charts, filterable by score and status</li>
+  <li><b>Quarantine Marking</b> — Flag flaky tests and rerun them separately</li>
+  <li><b>Test Recording</b> — Captures execution details for root cause analysis</li>
+</ul>
 
-    <h3>Pro Features ($5/month)</h3>
-    <ul>
-        <li><b>Unlimited Tests</b> — track more than 500 tests</li>
-        <li><b>Extended History</b> — beyond 30 days retention</li>
-        <li><b>Trend Charts</b> — visualize flakiness over time</li>
-        <li><b>Export</b> — JSON, CSV, HTML reports</li>
-        <li><b>Git Correlation</b> — link flakiness to commits</li>
-        <li><b>Auto-Quarantine</b> — automatically quarantine highly unstable tests</li>
-    </ul>
-    ]]></description>
+<h2>Why Flaky Test Detector?</h2>
+<p>
+  Studies show that up to 16% of tests in large codebases are flaky. This plugin transforms flaky test
+  management from guesswork into data-driven decision making.
+</p>
+
+<h2>Free vs Pro</h2>
+<ul>
+  <li><b>Free:</b> Up to 500 tests, 30-day history, flakiness scores, gutter icons, dashboard</li>
+  <li><b>Pro ($5/month):</b> Unlimited tests, extended history, trend charts, JSON/CSV/HTML export, git correlation analysis, auto-quarantine rules, and CI/CD integration</li>
+</ul>
+]]></description>
 
     <depends>com.intellij.modules.platform</depends>
 
