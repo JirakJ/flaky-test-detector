@@ -1,8 +1,8 @@
 <idea-plugin>
   <idea-version since-build="232" />
-  <version>2026.2.8</version>
+  <version>2026.2.9</version>
   <id>com.jakubjirak.flakytestdetector</id>
-  <product-descriptor code="PFLAKYTESTDETCTR" release-date="20260215" release-version="20262" optional="true" />
+  <product-descriptor code="PFLAKYTESTDTCTR" release-date="20260215" release-version="20262" optional="true" />
   <name>Flaky Test Detector</name>
   <vendor email="jakub@jirak.dev" url="https://github.com/jakubjirak">Jakub Jirák</vendor>
   <description><![CDATA[<h2>Flaky Test Detector</h2>

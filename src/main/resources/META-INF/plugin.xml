@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>com.jakubjirak.flakytestdetector</id>
-    <product-descriptor code="PFLAKYTESTDETCTR" release-date="20260215" release-version="20262" optional="true"/>
+    <product-descriptor code="PFLAKYTESTDTCTR" release-date="20260215" release-version="20262" optional="true"/>
     <name>Flaky Test Detector</name>
     <vendor email="jakub@jirak.dev" url="https://github.com/jakubjirak">Jakub Jirák</vendor>
 
