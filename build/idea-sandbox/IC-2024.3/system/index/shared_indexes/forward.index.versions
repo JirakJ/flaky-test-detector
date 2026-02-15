@@ -2,8 +2,8 @@ shared.index.file.content.hash.forward.index.sih.filetypes:1
 shared.index.file.content.hash.forward.index.sih.org.jetbrains.kotlin.idea.stubindex.KotlinExactPackagesIndex:1
 shared.index.file.content.hash.forward.index.sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex:2
 shared.index.file.content.hash.forward.index.sih.bytecodeAnalysis:2
-shared.index.file.content.hash.forward.index.sih.java.fun.expression:2
 shared.index.file.content.hash.forward.index.sih.java.auto.module.name:1
+shared.index.file.content.hash.forward.index.sih.java.fun.expression:2
 shared.index.file.content.hash.forward.index.sih.org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelPropertyFqnNameIndex:1
 shared.index.file.content.hash.forward.index.sih.gr.class.fqn.s:1
 shared.index.file.content.hash.forward.index.sih.java.unnamed.class:1
@@ -27,7 +27,7 @@ shared.index.file.content.hash.forward.index.sih.gr.script.fqn.s:1
 shared.index.file.content.hash.forward.index.sih.KotlinTopLevelCallableByPackageShortNameIndex:2
 shared.index.file.content.hash.forward.index.sih.java.source.module.name:2
 shared.index.file.content.hash.forward.index.sih.markdown.header:1
-shared.index.file.content.hash.forward.index.base:-24579
+shared.index.file.content.hash.forward.index.base:21492
 shared.index.file.content.hash.forward.index.sih.java.method.name:1
 shared.index.file.content.hash.forward.index.sih.gr.annot.method.name:1
 shared.index.file.content.hash.forward.index.sih.org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeFqNameIndex:1
@@ -55,8 +55,8 @@ shared.index.file.content.hash.forward.index.sih.IdIndex:2
 shared.index.file.content.hash.forward.index.sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinPartialPackageNamesIndex:2
 shared.index.file.content.hash.forward.index.sih.markdown.header.anchor:1
 shared.index.file.content.hash.forward.index.sih.KotlinFileFacadeClassByPackageIndex:1
-shared.index.file.content.hash.forward.index.sih.gr.method.name:1
 shared.index.file.content.hash.forward.index.sih.KotlinBinaryRootToPackageIndex:2
+shared.index.file.content.hash.forward.index.sih.gr.method.name:1
 shared.index.file.content.hash.forward.index.sih.KotlinTopLevelFunctionByPackageIndex:1
 shared.index.file.content.hash.forward.index.sih.org.jetbrains.kotlin.idea.stubindex.KotlinSubclassObjectNameIndex:1
 shared.index.file.content.hash.forward.index.sih.html5.custom.attributes.index:2
