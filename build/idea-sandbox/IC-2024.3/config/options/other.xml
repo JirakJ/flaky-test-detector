@@ -3,18 +3,19 @@
     <option name="languageName" value="JAVA" />
   </component>
   <component name="NotRoamableUiSettings">
+    <option name="fontSize" value="12.0" />
     <option name="presentationModeIdeScale" value="1.75" />
   </component>
-  <component name="PropertyService"><![CDATA[{
-  "keyToString": {
-    "fileTypeChangedCounter": "1",
-    "migrated.non.roamable.values.from.general.settings": "true"
+  <component name="PropertyService">{
+  &quot;keyToString&quot;: {
+    &quot;fileTypeChangedCounter&quot;: &quot;1&quot;,
+    &quot;migrated.non.roamable.values.from.general.settings&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "fileTypeDetectors": [
-      "com.intellij.ide.scratch.ScratchFileServiceImpl$Detector",
-      "org.jetbrains.plugins.textmate.TextMateFileType$TextMateFileDetector"
+  &quot;keyToStringList&quot;: {
+    &quot;fileTypeDetectors&quot;: [
+      &quot;com.intellij.ide.scratch.ScratchFileServiceImpl$Detector&quot;,
+      &quot;org.jetbrains.plugins.textmate.TextMateFileType$TextMateFileDetector&quot;
     ]
   }
-}]]></component>
+}</component>
 </application>

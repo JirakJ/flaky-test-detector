@@ -67,7 +67,9 @@ intellijPlatform {
     }
 
     signing { }
-    publishing { }
+    publishing {
+        token.set(System.getenv("PUBLISH_TOKEN"))
+    }
 }
 
 tasks {
