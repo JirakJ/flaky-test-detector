@@ -1,5 +1,11 @@
 # Changelog
 
+## [2026.2.16] - 2026-02-28
+
+### Changed
+- Refreshed plugin icon for better visibility and modern look
+- Updated dependencies and platform compatibility
+
 ## [2026.2.5] - 2026-02-14
 
 ### Fixed

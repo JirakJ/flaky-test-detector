@@ -1,6 +1,6 @@
 <idea-plugin>
   <idea-version since-build="232" />
-  <version>2026.2.12</version>
+  <version>2026.2.16</version>
   <id>com.jakubjirak.flakytestdetector</id>
   <product-descriptor code="PFLAKYTESTDTCTR" release-date="20260215" release-version="20262" optional="true" />
   <name>Flaky Test Detector</name>
@@ -10,7 +10,7 @@
 <p>Automatically track test execution history and identify flaky tests in your project. Each test gets 
 a reliability score so you know which tests are stable and which need attention.</p>
 
-<h3>Core Features</h3>
+<h3>Features</h3>
 <ul>
     <li><b>Automatic Tracking</b> — Records every test run (pass/fail/error/skip) automatically</li>
     <li><b>Flakiness Score</b> — Percentage-based reliability metric per test</li>
@@ -20,7 +20,6 @@ a reliability score so you know which tests are stable and which need attention.
     <li><b>One-Click Rerun</b> — Rerun any test directly from the dashboard</li>
 </ul>
 
-<h3>Pro Features ($5/month)</h3>
 <ul>
     <li>Unlimited tests and history retention</li>
     <li>Flakiness trend charts</li>
