@@ -4,13 +4,12 @@
     <name>Flaky Test Detector</name>
     <vendor email="support@jakubjirak.com" url="https://github.com/jakubjirak">Jakub Jirák</vendor>
 
-    <description><![CDATA[
-<h2>Flaky Test Detector — Stop Guessing Which Tests You Can Trust</h2>
+    <description><![CDATA[<h2>Flaky Test Detector — Stop Guessing Which Tests You Can Trust</h2>
 
 <p>Automatically track test execution history and identify flaky tests in your project. Each test gets 
 a reliability score so you know which tests are stable and which need attention.</p>
 
-<h3>Core Features</h3>
+<h3>Features</h3>
 <ul>
     <li><b>Automatic Tracking</b> — Records every test run (pass/fail/error/skip) automatically</li>
     <li><b>Flakiness Score</b> — Percentage-based reliability metric per test</li>
@@ -20,7 +19,6 @@ a reliability score so you know which tests are stable and which need attention.
     <li><b>One-Click Rerun</b> — Rerun any test directly from the dashboard</li>
 </ul>
 
-<h3>Pro Features ($5/month)</h3>
 <ul>
     <li>Unlimited tests and history retention</li>
     <li>Flakiness trend charts</li>
@@ -42,8 +40,7 @@ a reliability score so you know which tests are stable and which need attention.
     <a href="https://github.com/JirakJ/flaky-test-detector/issues">Documentation</a> |
     <a href="https://github.com/JirakJ/flaky-test-detector/issues">Issue Tracker</a> |
     <a href="https://github.com/JirakJ/flaky-test-detector/issues">Contact Support</a>
-</p>
-    ]]></description>
+</p>]]></description>
 
     <depends>com.intellij.modules.platform</depends>
 
