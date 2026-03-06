@@ -12,7 +12,6 @@ Flaky Test Detector automatically monitors your test runs, calculates flakiness 
 
 ## ✨ Features
 
-### Free Tier
 - 🔍 **Automatic Test History Tracking** — records every test run result (pass/fail/error/skip)
 - 📊 **Flakiness Score Calculation** — percentage-based score showing test reliability
 - 🎯 **Gutter Icons** — colored icons next to `@Test` annotations showing flakiness level
@@ -20,9 +19,6 @@ Flaky Test Detector automatically monitors your test runs, calculates flakiness 
 - 🔄 **Rerun Flaky Tests** — one-click rerun of all known flaky tests
 - 🚫 **Quarantine Mode** — mark known-flaky tests to distinguish from real failures
 - ⚙️ **Configurable Thresholds** — customize what counts as "suspicious", "flaky", or "highly unstable"
-- 📈 Up to **500 tracked tests**, **30 days** history retention
-
-### Pro Tier ($5/month)
 - 📊 **Flakiness Trend Charts** — visualize how test stability changes over time
 - 📦 **Module-level Aggregation** — see flakiness by module/package
 - 🏥 **Suite Health Score** — overall percentage of stable tests
@@ -71,7 +67,7 @@ Flaky Test Detector automatically monitors your test runs, calculates flakiness 
 | Flaky threshold | 30% | Score above this = 🔶 flaky |
 | Highly unstable threshold | 50% | Score above this = 🔴 highly unstable |
 | Gutter icons | ✅ | Show flakiness icons in editor |
-| Auto-quarantine | ❌ | Auto-quarantine above threshold (Pro) |
+| Auto-quarantine | ❌ | Auto-quarantine above threshold |
 
 ---
 

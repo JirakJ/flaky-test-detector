@@ -42,5 +42,5 @@
 - Quarantine mode for known-flaky tests
 - Rerun all flaky tests action (Alt+Shift+F)
 - Configurable settings (retention, thresholds, minimum runs)
-- Freemium model: Free (500 tests, 30 days) / Pro (unlimited)
+- Unlimited test tracking and history retention
 - Support for IntelliJ Platform 232.0+ (2023.2+)
