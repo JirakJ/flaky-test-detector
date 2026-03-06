@@ -1,6 +1,5 @@
 <idea-plugin>
     <id>com.jakubjirak.flakytestdetector</id>
-    <product-descriptor code="PFLAKYTESTDTCTR" release-date="20260215" release-version="20262" optional="true"/>
     <name>Flaky Test Detector</name>
     <vendor email="support@jakubjirak.com" url="https://github.com/jakubjirak">Jakub Jirák</vendor>
 
@@ -64,9 +63,6 @@ a reliability score so you know which tests are stable and which need attention.
         <applicationService
                 serviceImplementation="com.jakubjirak.flakytestdetector.settings.FlakyTestSettings"/>
 
-        <applicationService
-                serviceImplementation="com.jakubjirak.flakytestdetector.core.FreemiumGate"/>
-
         <testStatusListener
                 implementation="com.jakubjirak.flakytestdetector.listener.FlakyTestExecutionListener"/>
 
@@ -77,6 +73,9 @@ a reliability score so you know which tests are stable and which need attention.
                 id="Flaky Test Detector"
                 displayType="BALLOON"
                 toolWindowId="Flaky Tests"/>
+    
+        <notificationGroup id="Flaky Test Detector Feedback" displayType="BALLOON"/>
+        <projectActivity implementation="com.jakubjirak.flakytestdetector.feedback.FeedbackNotifier"/>
     </extensions>
 
     <actions>
@@ -124,9 +123,9 @@ a reliability score so you know which tests are stable and which need attention.
             <li><b>One-Click Rerun</b> - Quickly rerun any flaky test directly from the dashboard</li>
             <li><b>Quarantine Mode</b> - Mark known-flaky tests to prevent them from blocking your workflow</li>
             <li><b>Configurable Thresholds</b> - Set custom levels for suspicious, flaky, and highly unstable tests</li>
-            <li><b>Trend Charts (Pro)</b> - Visualize flakiness trends over time with interactive charts</li>
-            <li><b>Git Correlation (Pro)</b> - Detect which commit introduced test flakiness</li>
-            <li><b>Export Reports (Pro)</b> - Generate JSON, CSV, and HTML reports for team analysis</li>
+            <li><b>Trend Charts</b> - Visualize flakiness trends over time with interactive charts</li>
+            <li><b>Git Correlation</b> - Detect which commit introduced test flakiness</li>
+            <li><b>Export Reports</b> - Generate JSON, CSV, and HTML reports for team analysis</li>
         </ul>
     ]]></change-notes>
 </idea-plugin>
