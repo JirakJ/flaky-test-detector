@@ -1,8 +1,7 @@
 <idea-plugin>
   <idea-version since-build="232" />
-  <version>2026.2.16</version>
+  <version>2026.3.2</version>
   <id>com.jakubjirak.flakytestdetector</id>
-  <product-descriptor code="PFLAKYTESTDTCTR" release-date="20260215" release-version="20262" optional="true" />
   <name>Flaky Test Detector</name>
   <vendor email="support@jakubjirak.com" url="https://github.com/jakubjirak">Jakub Jirák</vendor>
   <description><![CDATA[<h2>Flaky Test Detector — Stop Guessing Which Tests You Can Trust</h2>
@@ -48,10 +47,11 @@ a reliability score so you know which tests are stable and which need attention.
     <toolWindow id="Flaky Tests" anchor="bottom" secondary="true" icon="AllIcons.Nodes.JunitTestMark" factoryClass="com.jakubjirak.flakytestdetector.ui.FlakyTestToolWindowFactory" />
     <applicationConfigurable id="com.jakubjirak.flakytestdetector.settings" parentId="tools" displayName="Flaky Test Detector" instance="com.jakubjirak.flakytestdetector.settings.FlakyTestConfigurable" />
     <applicationService serviceImplementation="com.jakubjirak.flakytestdetector.settings.FlakyTestSettings" />
-    <applicationService serviceImplementation="com.jakubjirak.flakytestdetector.core.FreemiumGate" />
     <testStatusListener implementation="com.jakubjirak.flakytestdetector.listener.FlakyTestExecutionListener" />
     <projectActivity implementation="com.jakubjirak.flakytestdetector.FlakyTestStartupActivity" />
     <notificationGroup id="Flaky Test Detector" displayType="BALLOON" toolWindowId="Flaky Tests" />
+    <notificationGroup id="Flaky Test Detector Feedback" displayType="BALLOON" />
+    <projectActivity implementation="com.jakubjirak.flakytestdetector.feedback.FeedbackNotifier" />
   </extensions>
   <actions>
     <action id="com.jakubjirak.flakytestdetector.RerunFlakyTests" class="com.jakubjirak.flakytestdetector.actions.RerunFlakyTestsAction" text="Rerun Flaky Tests" description="Rerun all tests with non-zero flakiness score" icon="AllIcons.Actions.Rerun">
@@ -77,8 +77,8 @@ a reliability score so you know which tests are stable and which need attention.
             <li><b>One-Click Rerun</b> - Quickly rerun any flaky test directly from the dashboard</li>
             <li><b>Quarantine Mode</b> - Mark known-flaky tests to prevent them from blocking your workflow</li>
             <li><b>Configurable Thresholds</b> - Set custom levels for suspicious, flaky, and highly unstable tests</li>
-            <li><b>Trend Charts (Pro)</b> - Visualize flakiness trends over time with interactive charts</li>
-            <li><b>Git Correlation (Pro)</b> - Detect which commit introduced test flakiness</li>
-            <li><b>Export Reports (Pro)</b> - Generate JSON, CSV, and HTML reports for team analysis</li>
+            <li><b>Trend Charts</b> - Visualize flakiness trends over time with interactive charts</li>
+            <li><b>Git Correlation</b> - Detect which commit introduced test flakiness</li>
+            <li><b>Export Reports</b> - Generate JSON, CSV, and HTML reports for team analysis</li>
         </ul>]]></change-notes>
 </idea-plugin>
