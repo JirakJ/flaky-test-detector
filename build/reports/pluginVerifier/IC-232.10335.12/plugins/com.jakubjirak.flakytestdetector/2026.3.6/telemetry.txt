@@ -1,0 +1,9 @@
+Plugin ID: com.jakubjirak.flakytestdetector
+Plugin Version: 2026.3.6
+Descriptor parsed in: 45 ms
+Descriptor parsed (raw ms): 45
+Plugin size (bytes): 359704
+Verified classes in plugin artifact: 45
+Verification time: 864 ms
+Verification time (raw ms): 864
+

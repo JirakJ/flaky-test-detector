@@ -1,9 +1,10 @@
 <idea-plugin>
   <idea-version since-build="232" />
-  <version>2026.3.5</version>
+  <version>2026.3.6</version>
   <id>com.jakubjirak.flakytestdetector</id>
   <name>Flaky Test Detector</name>
   <vendor email="support@jakubjirak.com" url="https://github.com/jakubjirak">Jakub Jirák</vendor>
+  <product-descriptor code="PFLAKYTESTDETEC" release-date="20260417" release-version="20263" optional="true" />
   <description><![CDATA[<h2>Flaky Test Detector — Stop Guessing Which Tests You Can Trust</h2>
 
 <p>Automatically track test execution history and identify flaky tests in your project. Each test gets 

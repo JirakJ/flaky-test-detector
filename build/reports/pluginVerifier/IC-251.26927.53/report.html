@@ -1,0 +1,236 @@
+<html>
+<head>
+<title>
+Verification result IC-251.26927.53
+</title>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript">
+</script>
+<script src="https://code.jquery.com/ui/1.9.2/jquery-ui.min.js" type="text/javascript">
+</script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" type="text/css"/>
+<style type="text/css">
+.shortDescription {
+    padding: 2px;
+}
+
+.updates div div:nth-child(odd) {
+    background: #eee;
+}
+
+.uMarker, .pMarker {
+    white-space: pre;
+    font-weight: bold;
+}
+
+.updateOk .uMarker {
+    background: #0f0;
+    color: #0f0;
+}
+
+.updateHasProblems .uMarker {
+    background: #f00;
+    color: #f00;
+}
+
+.warnings .uMarker {
+    background: #ffeb00;
+    color: #ffeb00;
+}
+
+.missingDeps .uMarker {
+    background: #7fd8ff;
+    color: #7fd8ff;
+}
+
+.badPlugin .uMarker {
+    background: #5f3103;
+    color: #5f3103;
+}
+
+.notFound .uMarker {
+    background: #e5c2ef;
+    color: #e5c2ef;
+}
+
+.failedToDownload .uMarker {
+    background: #ffa87a;
+    color: #ffa87a;
+}
+
+.excluded .uMarker {
+    background: #888 !important;
+}
+
+.problematicOnly .excluded, .problematicOnly .updateOk, .problematicOnly .pluginOk {
+    display: none;
+}
+
+.pluginOk .pMarker {
+    background: #0f0;
+    color: #0f0;
+}
+
+.pluginHasProblems .pMarker {
+    background: #f00;
+    color: #f00;
+}
+
+.warnings .pMarker {
+    background: #ffeb00;
+    color: #ffeb00;
+}
+
+.missingDeps .pMarker {
+    background: #7fd8ff;
+    color: #7fd8ff;
+}
+
+.badPlugin .pMarker {
+    background: #5f3103;
+    color: #5f3103;
+}
+
+.notFound .pMarker {
+    background: #e5c2ef;
+    color: #e5c2ef;
+}
+
+.failedToDownload .pMarker {
+    background: #ffa87a;
+    color: #ffa87a;
+}
+
+.shortDescription a {
+    color: #2B587A !important;
+}
+
+.longDescription {
+    display: none;
+    margin-left: 100px;
+    padding: 2px;
+}
+</style>
+</head>
+<body>
+<h2>
+IC-251.26927.53</h2>
+<div class="plugin pluginOk">
+<h3>
+<span class="pMarker">
+    </span>
+com.jakubjirak.flakytestdetector</h3>
+<div >
+<div class="update updateOk">
+<h3>
+<span class="uMarker">
+    </span>
+2026.3.6<small>
+com.jakubjirak.flakytestdetector:2026.3.6</small>
+<small>
+Compatible</small>
+</h3>
+<div >
+<div class="shortDescription">
+Dependencies used on verification <a href="#" class="detailsLink">
+details</a>
+<div class="longDescription">
+com.jakubjirak.flakytestdetector:2026.3.6<br/>
+\--- com.intellij:251.26927.53<br/>
+     +--- (failed) dependency on plugin 'com.intellij.platform.experimental.backend' declared in content module 'intellij.platform.rpc.backend' of 'com.intellij': Dependency 'dependency on plugin 'com.intellij.platform.experimental.backend' declared in content module 'intellij.terminal.backend' of 'org.jetbrains.plugins.terminal'' is not resolved. It was searched in the following locations: Local Plugin Repository, Bundled plugins of IC-251.26927.53, JetBrains Marketplace https://plugins.jetbrains.com<br/>
+     +--- (failed) dependency on plugin 'com.intellij.platform.experimental.frontend' declared in content module 'intellij.platform.searchEverywhere.frontend' of 'com.intellij': Dependency 'dependency on plugin 'com.intellij.platform.experimental.frontend' declared in content module 'intellij.terminal.frontend' of 'org.jetbrains.plugins.terminal'' is not resolved. It was searched in the following locations: Local Plugin Repository, Bundled plugins of IC-251.26927.53, JetBrains Marketplace https://plugins.jetbrains.com<br/>
+     +--- (optional) Git4Idea:251.26927.53<br/>
+     |    +--- com.intellij:251.26927.53 (*) [declaring module intellij.platform.collaborationTools]<br/>
+     |    +--- (optional) com.jetbrains.performancePlugin:251.26927.53<br/>
+     |    |    \--- com.intellij:251.26927.53 (*) [declaring module com.intellij.modules.lang]<br/>
+     |    \--- (optional) org.jetbrains.plugins.terminal:251.26927.53<br/>
+     |         +--- (failed) dependency on plugin 'com.intellij.platform.experimental.backend' declared in content module 'intellij.terminal.backend' of 'org.jetbrains.plugins.terminal': Dependency 'dependency on plugin 'com.intellij.platform.experimental.backend' declared in content module 'intellij.terminal.backend' of 'org.jetbrains.plugins.terminal'' is not resolved. It was searched in the following locations: Local Plugin Repository, Bundled plugins of IC-251.26927.53, JetBrains Marketplace https://plugins.jetbrains.com<br/>
+     |         +--- (failed) dependency on plugin 'com.intellij.platform.experimental.frontend' declared in content module 'intellij.terminal.frontend' of 'org.jetbrains.plugins.terminal': Dependency 'dependency on plugin 'com.intellij.platform.experimental.frontend' declared in content module 'intellij.terminal.frontend' of 'org.jetbrains.plugins.terminal'' is not resolved. It was searched in the following locations: Local Plugin Repository, Bundled plugins of IC-251.26927.53, JetBrains Marketplace https://plugins.jetbrains.com<br/>
+     |         +--- com.intellij:251.26927.53 (*) [declaring module com.intellij.modules.lang]<br/>
+     |         \--- (optional) com.jetbrains.sh:251.26927.53<br/>
+     |              +--- (failed) dependency on plugin 'com.intellij.modules.python' declared in content module 'intellij.sh.python' of 'com.jetbrains.sh': Dependency 'dependency on plugin 'com.intellij.modules.python' declared in content module 'intellij.sh.python' of 'com.jetbrains.sh'' is not resolved. It was searched in the following locations: Local Plugin Repository, Bundled plugins of IC-251.26927.53, JetBrains Marketplace https://plugins.jetbrains.com<br/>
+     |              +--- com.intellij:251.26927.53 (*) [declaring module com.intellij.modules.lang]<br/>
+     |              +--- (optional) com.intellij.copyright:251.26927.53<br/>
+     |              |    \--- com.intellij:251.26927.53 (*) [declaring module com.intellij.modules.lang]<br/>
+     |              +--- (optional) org.intellij.plugins.markdown:251.26927.53<br/>
+     |              |    +--- com.intellij:251.26927.53 (*) [declaring module com.intellij.modules.lang]<br/>
+     |              |    +--- (optional) com.intellij.modules.json:251.26927.53<br/>
+     |              |    |    \--- com.intellij:251.26927.53 (*) [declaring module com.intellij.modules.lang]<br/>
+     |              |    +--- (optional) com.intellij.platform.images:251.26927.53<br/>
+     |              |    |    \--- com.intellij:251.26927.53 (*) [declaring module com.intellij.modules.lang]<br/>
+     |              |    +--- (optional) org.intellij.intelliLang:251.26927.53<br/>
+     |              |    |    +--- (optional) XPathView:251.23774.318<br/>
+     |              |    |    |    \--- com.intellij:251.26927.53 (*)<br/>
+     |              |    |    +--- (optional) com.intellij.java:251.26927.53<br/>
+     |              |    |    |    +--- (failed) dependency on plugin 'com.intellij.platform.experimental.frontend' declared in content module 'intellij.java.debugger.impl.frontend' of 'com.intellij.java': Dependency 'dependency on plugin 'com.intellij.platform.experimental.frontend' declared in content module 'intellij.terminal.frontend' of 'org.jetbrains.plugins.terminal'' is not resolved. It was searched in the following locations: Local Plugin Repository, Bundled plugins of IC-251.26927.53, JetBrains Marketplace https://plugins.jetbrains.com<br/>
+     |              |    |    |    +--- (optional) com.intellij.copyright:251.26927.53 (*)<br/>
+     |              |    |    |    +--- (optional) com.intellij:251.26927.53 (*)<br/>
+     |              |    |    |    +--- (optional) com.intellij.platform.images:251.26927.53 (*)<br/>
+     |              |    |    |    +--- (optional) org.jetbrains.plugins.terminal:251.26927.53 (*)<br/>
+     |              |    |    |    +--- (optional) training:251.26927.53<br/>
+     |              |    |    |    |    +--- com.intellij:251.26927.53 (*) [declaring module intellij.platform.tips]<br/>
+     |              |    |    |    |    \--- (optional) Git4Idea:251.26927.53 (*)<br/>
+     |              |    |    |    \--- (optional) com.jetbrains.performancePlugin:251.26927.53 (*) [declaring module intellij.performanceTesting.vcs]<br/>
+     |              |    |    \--- (optional) com.intellij:251.26927.53 (*)<br/>
+     |              |    +--- (optional) org.toml.lang:251.26927.53<br/>
+     |              |    |    +--- com.intellij:251.26927.53 (*) [declaring module com.intellij.modules.lang]<br/>
+     |              |    |    +--- (optional) com.intellij.modules.json:251.26927.53 (*)<br/>
+     |              |    |    \--- (optional) tanvd.grazi:251.26927.53<br/>
+     |              |    |         +--- com.intellij:251.26927.53 (*) [declaring module intellij.platform.vcs.impl]<br/>
+     |              |    |         +--- (optional) com.intellij.java:251.26927.53 (*)<br/>
+     |              |    |         +--- (optional) com.intellij.modules.json:251.26927.53 (*)<br/>
+     |              |    |         +--- (optional) com.intellij.properties:251.26927.53<br/>
+     |              |    |         |    +--- com.intellij:251.26927.53 (*) [declaring module com.intellij.modules.xml]<br/>
+     |              |    |         |    \--- (optional) com.intellij.copyright:251.26927.53 (*)<br/>
+     |              |    |         +--- (optional) org.intellij.plugins.markdown:251.26927.53 (*)<br/>
+     |              |    |         \--- (optional) intellij.yaml.backend:251.26927.53 [product module]<br/>
+     |              |    |              +--- (failed) com.intellij.platform.experimental.backend (plugin, v2): Dependency 'dependency on plugin 'com.intellij.platform.experimental.backend' declared in content module 'intellij.terminal.backend' of 'org.jetbrains.plugins.terminal'' is not resolved. It was searched in the following locations: Local Plugin Repository, Bundled plugins of IC-251.26927.53, JetBrains Marketplace https://plugins.jetbrains.com<br/>
+     |              |    |              +--- com.intellij.modules.json:251.26927.53 (*) [declaring module com.intellij.modules.json]<br/>
+     |              |    |              +--- com.intellij:251.26927.53 (*) [declaring module com.intellij.modules.lang]<br/>
+     |              |    |              \--- org.jetbrains.plugins.yaml:251.26927.53 [declaring module intellij.yaml]<br/>
+     |              |    |                   +--- (failed) dependency on plugin 'com.intellij.jetbrains.client' declared in content module 'intellij.yaml.frontend.split' of 'org.jetbrains.plugins.yaml': Dependency 'dependency on plugin 'com.intellij.jetbrains.client' declared in content module 'intellij.yaml.frontend.split' of 'org.jetbrains.plugins.yaml'' is not resolved. It was searched in the following locations: Local Plugin Repository, Bundled plugins of IC-251.26927.53, JetBrains Marketplace https://plugins.jetbrains.com<br/>
+     |              |    |                   +--- (failed) dependency on plugin 'com.intellij.platform.experimental.backend' declared in content module 'intellij.yaml.backend' of 'org.jetbrains.plugins.yaml': Dependency 'dependency on plugin 'com.intellij.platform.experimental.backend' declared in content module 'intellij.terminal.backend' of 'org.jetbrains.plugins.terminal'' is not resolved. It was searched in the following locations: Local Plugin Repository, Bundled plugins of IC-251.26927.53, JetBrains Marketplace https://plugins.jetbrains.com<br/>
+     |              |    |                   +--- com.intellij:251.26927.53 (*) [declaring module com.intellij.modules.lang]<br/>
+     |              |    |                   \--- com.intellij.modules.json:251.26927.53 (*) [declaring module intellij.json.split]<br/>
+     |              |    \--- (optional) intellij.yaml.backend:251.26927.53 (*) [product module]<br/>
+     |              \--- (optional) org.jetbrains.plugins.terminal:251.26927.53 (*)<br/>
+     +--- (optional) com.intellij.copyright:251.26927.53 (*)<br/>
+     +--- (optional) com.intellij.platform.images:251.26927.53 (*)<br/>
+     +--- (optional) org.jetbrains.kotlin:251.26927.53<br/>
+     |    +--- com.intellij.java:251.26927.53 (*)<br/>
+     |    \--- com.intellij:251.26927.53 (*) [declaring module intellij.platform.collaborationTools]<br/>
+     +--- (optional) intellij.java.featuresTrainer:251.26927.53 [product module]<br/>
+     |    \--- training:251.26927.53 (*)<br/>
+     \--- (optional) kotlin.features-trainer:251.26927.53 [product module]<br/>
+          +--- training:251.26927.53 (*)<br/>
+          \--- intellij.java.featuresTrainer:251.26927.53 (*) [product module]<br/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script >
+//$( "#tabs" ).tabs();
+$(".plugin").accordion({active: false, collapsible: true, heightStyle: 'content'});
+$(".update").accordion({active: false, collapsible: true, heightStyle: 'content'});
+
+$(".detailsLink").click(function () {
+    var longDiv = $(this).parent().find(".longDescription");
+
+    if (longDiv.css('display') !== 'block') {
+        longDiv.css('display', 'block')
+    } else {
+        longDiv.css('display', 'none')
+    }
+
+    return false
+});
+
+$(".updateHasProblems .uMarker").attr('title', "Problems found");
+$(".excluded .uMarker").attr('title', "Excluded");
+
+$(".pluginHasProblem .pMarker").attr('title', "Problems found");
+$(".pluginOk .pMarker").attr('title', "Excluded");
+</script>
+</body>
+</html>
