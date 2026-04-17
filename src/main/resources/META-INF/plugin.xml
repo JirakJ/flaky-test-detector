@@ -2,6 +2,8 @@
     <id>com.jakubjirak.flakytestdetector</id>
     <name>Flaky Test Detector</name>
     <vendor email="support@jakubjirak.com" url="https://github.com/jakubjirak">Jakub Jirák</vendor>
+    <product-descriptor code="PFLAKYTESTDETEC" release-date="20260417" release-version="20263" optional="true"/>
+
 
     <description><![CDATA[<h2>Flaky Test Detector — Stop Guessing Which Tests You Can Trust</h2>
 
