@@ -47,9 +47,8 @@ _(185 characters)_
 - 🔄 **Rerun Flaky Tests** — One-click rerun of all known flaky tests (`Alt+Shift+F`)
 - 🚫 **Quarantine Mode** — Mark known-flaky tests to distinguish from real failures
 - ⚙️ **Configurable Thresholds** — Customize what counts as suspicious, flaky, or highly unstable
-- 📈 **Up to 500 tracked tests** with 30 days history retention
 
-#### 💎 Pro — $5/month
+#### 💎 Advanced features
 
 - 📊 **Flakiness Trend Charts** — Visualize how test stability changes over time
 - 📦 **Module-Level Aggregation** — See flakiness rolled up by module and package
@@ -57,17 +56,14 @@ _(185 characters)_
 - 📤 **Export Reports** — JSON, CSV, and HTML exports for CI and team sharing
 - 🔗 **Git Correlation** — Detect which commit introduced flakiness
 - 🤖 **Auto-Quarantine Rules** — Automatically quarantine tests above a configured threshold
-- ♾️ **Unlimited Tracked Tests** — No 500-test cap
-- 📚 **Unlimited History Retention** — No 30-day limit
+- ♾️ **Unlimited Tracked Tests**
+- 📚 **Configurable History Retention**
 
 ---
 
-### 💰 Pricing Model
+### 💚 Free & open source
 
-| Tier     | Price      | Highlights                                              |
-|----------|------------|---------------------------------------------------------|
-| **Free** | $0         | Flakiness scores, gutter icons, dashboard, rerun, quarantine, 500 tests / 30 days |
-| **Pro**  | $5/month   | Trend charts, module aggregation, suite health, export, git correlation, auto-quarantine, unlimited |
+All features are free for everyone — no license needed. Source code under Apache-2.0: https://github.com/JirakJ/flaky-test-detector
 
 ---
 
@@ -108,9 +104,9 @@ _(185 characters)_
 | 2  | **Flaky Tests dashboard** — Tool window with test table, sparkline history, flakiness scores, and trend indicators |
 | 3  | **Quarantine mode** — Test marked as quarantined with distinct visual treatment in the dashboard |
 | 4  | **Rerun flaky tests action** — `Alt+Shift+F` triggering a rerun of all known flaky tests |
-| 5  | **Flakiness trend chart** — Line chart showing flakiness score trajectory over time for selected tests (Pro) |
-| 6  | **Module-level aggregation** — Dashboard grouped by module/package showing aggregated flakiness percentages (Pro) |
-| 7  | **Git correlation view** — Shows which commit introduced or resolved flakiness for a test (Pro) |
+| 5  | **Flakiness trend chart** — Line chart showing flakiness score trajectory over time for selected tests |
+| 6  | **Module-level aggregation** — Dashboard grouped by module/package showing aggregated flakiness percentages |
+| 7  | **Git correlation view** — Shows which commit introduced or resolved flakiness for a test |
 | 8  | **Settings panel** — Configuration page with threshold sliders, history retention, and auto-quarantine toggle |
 
 ---
@@ -170,9 +166,6 @@ _(185 characters)_
 - [ ] Screenshots are high-resolution (1280×800 or higher), PNG format
 - [ ] Plugin ID matches `gradle.properties` and `plugin.xml`
 - [ ] `plugin.xml` vendor email and URL are correct
-- [ ] Pricing tiers configured in JetBrains Marketplace seller dashboard
-- [ ] Product code `PFLAKYTESTDTCTR` is registered
-- [ ] License agreement / EULA uploaded
 - [ ] Compatibility range tested on minimum supported IDE version (2024.3)
 - [ ] Plugin verified with Plugin Verifier (`runPluginVerifier` Gradle task)
 - [ ] CHANGELOG.md is up to date for the release version

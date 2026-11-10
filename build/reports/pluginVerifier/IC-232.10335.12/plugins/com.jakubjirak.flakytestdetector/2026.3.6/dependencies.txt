@@ -1,2 +1,0 @@
-com.jakubjirak.flakytestdetector:2026.3.6
-\--- com.intellij:232.10335.12
