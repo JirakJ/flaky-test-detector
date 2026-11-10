@@ -1,8 +1,8 @@
 # Flaky Test Detector
 
+[![Version](https://img.shields.io/badge/version-2026.8.0-blue)](https://plugins.jetbrains.com/plugin/30205)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 [![Build](https://github.com/JirakJ/flaky-test-detector/workflows/Build/badge.svg)](https://github.com/JirakJ/flaky-test-detector/actions)
-[![Version](https://img.shields.io/badge/version-2026.2.1-blue.svg)](https://github.com/JirakJ/flaky-test-detector/releases)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 **Detect, track, and visualize flaky tests directly in your JetBrains IDE.**
 
@@ -130,10 +130,18 @@ Flaky Test Detector is part of a comprehensive developer productivity toolkit:
 
 ---
 
-## 📄 License
-
-MIT License — see [LICENSE](LICENSE) for details.
-
 ## 👤 Author
 
 **Jakub Jirák** — [GitHub](https://github.com/JirakJ)
+
+## Free & open source
+
+As of version 2026.8.0 this plugin is completely free — every feature is unlocked and no license is needed. The source code is available at https://github.com/JirakJ/flaky-test-detector under the Apache License 2.0.
+
+## Contributing
+
+Issues and pull requests are welcome — please open them on GitHub.
+
+## License
+
+Copyright 2026 Jakub Jirák. Licensed under the [Apache License, Version 2.0](LICENSE).

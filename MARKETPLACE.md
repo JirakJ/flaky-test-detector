@@ -36,7 +36,7 @@ Automatically tracks test run history, calculates flakiness scores, and shows un
   <li><b>Configurable Thresholds</b> — define what "flaky" means for your project</li>
 </ul>
 
-<h3>💎 Pro Features ($5/month)</h3>
+<h3>💎 Advanced Features (free)</h3>
 <ul>
   <li><b>Trend Charts</b> — visualize flakiness over time</li>
   <li><b>Module Aggregation</b> — see flakiness by package/module</li>
@@ -76,10 +76,7 @@ testing, flaky-tests, test-quality, code-quality, test-runner, developer-tools, 
 Code tools
 
 ## Pricing
-| Tier | Price | Includes |
-|------|:-----:|---------|
-| Free | $0 | 500 tests, 30-day history, gutter icons, dashboard, quarantine |
-| Pro | $5/month | Unlimited tests/history, trends, export, Git correlation, auto-quarantine |
+Free and open source (Apache-2.0) — all features unlocked, no license needed. Source: https://github.com/JirakJ/flaky-test-detector
 
 ## Suggested Screenshots
 1. Gutter icons showing flakiness levels next to @Test annotations
