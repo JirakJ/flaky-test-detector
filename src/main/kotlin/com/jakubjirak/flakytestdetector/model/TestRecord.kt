@@ -1,5 +1,7 @@
 package com.jakubjirak.flakytestdetector.model
 
+import com.jakubjirak.flakytestdetector.core.FlakinessCalculator
+
 data class TestRecord(
     val testId: String,
     val className: String,
@@ -9,18 +11,11 @@ data class TestRecord(
     var quarantined: Boolean = false,
     val tags: MutableSet<String> = mutableSetOf()
 ) {
+    /** Share (0–100 %) of consecutive non-skipped runs whose outcome differs from the previous one. */
     val flakinessScore: Double
-        get() {
-            if (results.size < 2) return 0.0
-            val meaningful = results.filter { it.outcome != TestOutcome.SKIP }
-            if (meaningful.size < 2) return 0.0
-            var changes = 0
-            for (i in 1 until meaningful.size) {
-                if (meaningful[i].outcome != meaningful[i - 1].outcome) {
-                    changes++
-                }
-            }
-            @Suppress("MagicNumber")
-            return (changes.toDouble() / (meaningful.size - 1)) * 100.0
-        }
+        get() = FlakinessCalculator.score(results)
+
+    /** Simple class name (without package) — what the editor knows about a test method's class. */
+    val simpleClassName: String
+        get() = className.substringAfterLast('.')
 }

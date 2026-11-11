@@ -16,7 +16,7 @@
 
 ## 🎯 Short Description
 
-> Detect, track, and visualize flaky tests in your IDE. Monitors test runs, calculates flakiness scores, shows gutter icons, and provides a dashboard with quarantine mode and rerun support.
+> Detect, track, and visualize flaky tests in your IDE. Monitors test runs, calculates flakiness scores, shows gutter icons, and provides a dashboard with quarantine marking.
 
 _(185 characters)_
 
@@ -38,25 +38,18 @@ _(185 characters)_
 
 - 🔍 **Automatic Test History Tracking** — Records every test run result (pass/fail/error/skip) automatically
 - 📊 **Flakiness Score** — Percentage-based reliability score for every test
-- 🎯 **Gutter Icons** — Color-coded icons next to `@Test` annotations:
+- 🎯 **Gutter Icons** — Color-coded icons on Java/Kotlin test methods (stable tests get none):
   - ✅ **Stable** (0%)
   - ⚠️ **Suspicious** (1–15%)
   - 🔶 **Flaky** (16–50%)
   - 🔴 **Highly Unstable** (51–100%)
 - 📋 **Flaky Tests Dashboard** — Dedicated tool window with table, sparkline visualization, and trend indicators
-- 🔄 **Rerun Flaky Tests** — One-click rerun of all known flaky tests (`Alt+Shift+F`)
 - 🚫 **Quarantine Mode** — Mark known-flaky tests to distinguish from real failures
 - ⚙️ **Configurable Thresholds** — Customize what counts as suspicious, flaky, or highly unstable
 
-#### 💎 Advanced features
+#### More
 
-- 📊 **Flakiness Trend Charts** — Visualize how test stability changes over time
-- 📦 **Module-Level Aggregation** — See flakiness rolled up by module and package
-- 🏥 **Suite Health Score** — Overall percentage of stable tests in your project
-- 📤 **Export Reports** — JSON, CSV, and HTML exports for CI and team sharing
-- 🔗 **Git Correlation** — Detect which commit introduced flakiness
-- 🤖 **Auto-Quarantine Rules** — Automatically quarantine tests above a configured threshold
-- ♾️ **Unlimited Tracked Tests**
+- 🤖 **Auto-Quarantine** — Automatically quarantine tests above a configured score
 - 📚 **Configurable History Retention**
 
 ---
@@ -89,10 +82,9 @@ All features are free for everyone — no license needed. Source code under Apac
 
 1. **Install** — Search "Flaky Test Detector" in `Settings → Plugins → Marketplace`
 2. **Run your tests** — Execute tests as usual; the plugin automatically records results
-3. **Check gutter icons** — After a few runs, flakiness icons appear next to `@Test` annotations
+3. **Check gutter icons** — After a few runs, unstable Java/Kotlin test methods get a flakiness icon
 4. **Open dashboard** — View the Flaky Tests tool window (`View → Tool Windows → Flaky Tests`) for the full picture
-5. **Rerun flaky tests** — Press `Alt+Shift+F` to rerun all tests with non-zero flakiness scores
-6. **Configure** — Adjust thresholds and settings in `Settings → Tools → Flaky Test Detector`
+5. **Configure** — Adjust thresholds and settings in `Settings → Tools → Flaky Test Detector`
 
 ---
 
@@ -103,11 +95,7 @@ All features are free for everyone — no license needed. Source code under Apac
 | 1  | **Gutter icons next to tests** — Shows ✅ stable, ⚠️ suspicious, 🔶 flaky, and 🔴 highly unstable icons beside `@Test` annotations |
 | 2  | **Flaky Tests dashboard** — Tool window with test table, sparkline history, flakiness scores, and trend indicators |
 | 3  | **Quarantine mode** — Test marked as quarantined with distinct visual treatment in the dashboard |
-| 4  | **Rerun flaky tests action** — `Alt+Shift+F` triggering a rerun of all known flaky tests |
-| 5  | **Flakiness trend chart** — Line chart showing flakiness score trajectory over time for selected tests |
-| 6  | **Module-level aggregation** — Dashboard grouped by module/package showing aggregated flakiness percentages |
-| 7  | **Git correlation view** — Shows which commit introduced or resolved flakiness for a test |
-| 8  | **Settings panel** — Configuration page with threshold sliders, history retention, and auto-quarantine toggle |
+| 4  | **Settings panel** — Configuration page with threshold sliders, history retention, and auto-quarantine toggle |
 
 ---
 
@@ -122,7 +110,7 @@ All features are free for everyone — no license needed. Source code under Apac
 
 ## 🔍 Keywords (SEO)
 
-`flaky tests`, `test reliability`, `test flakiness`, `flaky test detection`, `test dashboard`, `quarantine tests`, `test history`, `test stability`, `test quality`, `CI failures`, `test rerun`, `unreliable tests`, `test monitoring`, `test suite health`, `junit`, `testing`
+`flaky tests`, `test reliability`, `test flakiness`, `flaky test detection`, `test dashboard`, `quarantine tests`, `test history`, `test stability`, `test quality`, `CI failures`, `unreliable tests`, `test monitoring`, `test suite health`, `junit`, `testing`
 
 ---
 

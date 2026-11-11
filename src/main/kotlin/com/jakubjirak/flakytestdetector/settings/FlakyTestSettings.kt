@@ -4,6 +4,7 @@ import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.components.PersistentStateComponent
 import com.intellij.openapi.components.State
 import com.intellij.openapi.components.Storage
+import com.jakubjirak.flakytestdetector.model.FlakinessThresholds
 
 @Suppress("MagicNumber")
 @State(
@@ -67,6 +68,8 @@ class FlakyTestSettings : PersistentStateComponent<FlakyTestSettings.State> {
     var autoQuarantineThreshold: Double
         get() = state.autoQuarantineThreshold
         set(value) { state.autoQuarantineThreshold = value }
+
+    fun thresholds(): FlakinessThresholds = FlakinessThresholds(suspiciousThreshold, flakyThreshold, highlyUnstableThreshold)
 
     companion object {
         fun getInstance(): FlakyTestSettings =

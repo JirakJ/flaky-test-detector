@@ -3,6 +3,7 @@ package com.jakubjirak.flakytestdetector.ui
 import com.jakubjirak.flakytestdetector.core.FlakinessCalculator
 import com.jakubjirak.flakytestdetector.model.FlakinessCategory
 import com.jakubjirak.flakytestdetector.model.TestRecord
+import com.jakubjirak.flakytestdetector.settings.FlakyTestSettings
 import com.jakubjirak.flakytestdetector.storage.FlakyTestStorage
 import java.awt.BorderLayout
 import java.awt.FlowLayout
@@ -37,7 +38,6 @@ class FlakyTestPanel(private val storage: FlakyTestStorage) : JPanel(BorderLayou
         add(filterPanel, BorderLayout.NORTH)
         add(com.intellij.ui.components.JBScrollPane(table), BorderLayout.CENTER)
 
-        storage.addListener { refreshTable() }
         refreshTable()
     }
 
@@ -47,14 +47,14 @@ class FlakyTestPanel(private val storage: FlakyTestStorage) : JPanel(BorderLayou
 
         records.forEach { record ->
             val score = record.flakinessScore
-            val category = FlakinessCategory.fromScore(score)
+            val category = FlakinessCategory.fromScore(score, FlakyTestSettings.getInstance().thresholds())
             val trend = calculator.calculateTrend(record.results)
 
             tableModel.addRow(
                 arrayOf(
                     record.methodName,
                     record.className,
-                    "${category.displayName} (${String.format("%.1f", score)}%)",
+                    "${category.displayName} (${String.format(java.util.Locale.US, "%.1f", score)}%)",
                     record.results,
                     trend.symbol + " " + trend.displayName,
                     if (record.quarantined) "Yes" else "No"
