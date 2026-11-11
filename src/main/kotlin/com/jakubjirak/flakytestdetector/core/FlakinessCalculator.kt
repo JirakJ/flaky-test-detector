@@ -1,26 +1,16 @@
 package com.jakubjirak.flakytestdetector.core
 
 import com.jakubjirak.flakytestdetector.model.FlakinessCategory
+import com.jakubjirak.flakytestdetector.model.FlakinessThresholds
 import com.jakubjirak.flakytestdetector.model.TestOutcome
 import com.jakubjirak.flakytestdetector.model.TestRunResult
 
 class FlakinessCalculator {
 
-    @Suppress("MagicNumber")
-    fun calculateScore(results: List<TestRunResult>): Double {
-        val meaningful = results.filter { it.outcome != TestOutcome.SKIP }
-        if (meaningful.size < 2) return 0.0
+    fun calculateScore(results: List<TestRunResult>): Double = score(results)
 
-        var changes = 0
-        for (i in 1 until meaningful.size) {
-            if (meaningful[i].outcome != meaningful[i - 1].outcome) {
-                changes++
-            }
-        }
-        return (changes.toDouble() / (meaningful.size - 1)) * 100.0
-    }
-
-    fun categorize(score: Double): FlakinessCategory = FlakinessCategory.fromScore(score)
+    fun categorize(score: Double, thresholds: FlakinessThresholds = FlakinessThresholds.DEFAULT): FlakinessCategory =
+        FlakinessCategory.fromScore(score, thresholds)
 
     fun meetsMinimumRuns(results: List<TestRunResult>, minimumRuns: Int): Boolean {
         return results.filter { it.outcome != TestOutcome.SKIP }.size >= minimumRuns
@@ -50,6 +40,16 @@ class FlakinessCalculator {
     }
 
     companion object {
+        private const val PERCENT = 100.0
+
+        /** Share (0–100 %) of consecutive non-skipped runs whose outcome flipped. */
+        fun score(results: List<TestRunResult>): Double {
+            val meaningful = results.filter { it.outcome != TestOutcome.SKIP }
+            if (meaningful.size < 2) return 0.0
+            val changes = meaningful.zipWithNext().count { (a, b) -> a.outcome != b.outcome }
+            return changes.toDouble() / (meaningful.size - 1) * PERCENT
+        }
+
         @Suppress("MagicNumber")
         private const val TREND_WINDOW = 5
 

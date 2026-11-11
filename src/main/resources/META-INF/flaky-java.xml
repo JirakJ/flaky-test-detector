@@ -1,0 +1,6 @@
+<idea-plugin>
+    <extensions defaultExtensionNs="com.intellij">
+        <codeInsight.lineMarkerProvider language="JAVA"
+                implementationClass="com.jakubjirak.flakytestdetector.ui.FlakyGutterIconProvider"/>
+    </extensions>
+</idea-plugin>

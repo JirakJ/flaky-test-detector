@@ -22,29 +22,23 @@ Automatically tracks test run history, calculates flakiness scores, and shows un
   <li>Run your tests as usual — the plugin silently records every result</li>
   <li>After 3+ runs, flakiness scores appear as gutter icons next to @Test</li>
   <li>Open the Flaky Tests dashboard for a complete overview</li>
-  <li>Quarantine, fix, or rerun — your choice, backed by data</li>
+  <li>Quarantine or fix — your choice, backed by data</li>
 </ol>
 
 <h3>✨ Free Features</h3>
 <ul>
   <li><b>Automatic History Tracking</b> — records pass/fail/error/skip for every test run</li>
   <li><b>Flakiness Score</b> — percentage showing how often a test changes its result</li>
-  <li><b>Gutter Icons</b> — colored indicators (✅⚠️🔶🔴) next to test methods</li>
+  <li><b>Gutter Icons</b> — colored indicators (⚠️🔶🔴) on unstable Java/Kotlin test methods</li>
   <li><b>Flaky Tests Dashboard</b> — sortable table with sparkline and trend</li>
   <li><b>Quarantine Mode</b> — mark known-flaky tests</li>
-  <li><b>Rerun Flaky Tests</b> — one-click rerun of all unreliable tests</li>
   <li><b>Configurable Thresholds</b> — define what "flaky" means for your project</li>
 </ul>
 
-<h3>💎 Advanced Features (free)</h3>
+<h3>More</h3>
 <ul>
-  <li><b>Trend Charts</b> — visualize flakiness over time</li>
-  <li><b>Module Aggregation</b> — see flakiness by package/module</li>
-  <li><b>Suite Health Score</b> — overall test suite reliability</li>
-  <li><b>Export Reports</b> — JSON, CSV, HTML for CI/team sharing</li>
-  <li><b>Git Correlation</b> — which commit made a test flaky?</li>
-  <li><b>Auto-Quarantine</b> — automatically quarantine highly unstable tests</li>
-  <li><b>Unlimited</b> tracked tests and history retention</li>
+  <li><b>Auto-Quarantine</b> — automatically quarantine tests above a configured score</li>
+  <li><b>History Retention</b> — configurable number of days</li>
 </ul>
 
 <h3>📊 Flakiness Categories</h3>
