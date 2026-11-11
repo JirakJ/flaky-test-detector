@@ -1,6 +1,6 @@
 # Flaky Test Detector
 
-[![Version](https://img.shields.io/badge/version-2026.8.0-blue)](https://plugins.jetbrains.com/plugin/30205)
+[![Version](https://img.shields.io/badge/version-2026.9.0-blue)](https://plugins.jetbrains.com/plugin/30205)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 [![Build](https://github.com/JirakJ/flaky-test-detector/actions/workflows/verify.yml/badge.svg)](https://github.com/JirakJ/flaky-test-detector/actions/workflows/verify.yml)
 

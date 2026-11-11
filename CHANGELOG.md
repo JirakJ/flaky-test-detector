@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [2026.9.0] - 2026-11-11
+
 ### Fixed
 - **Gutter icons never appeared**: the provider was not registered, and it looked tests up by simple class name while history used fully-qualified names. It is now registered for Java and Kotlin (K2-compatible) and matches correctly.
 - Results were stored in whichever project was opened first; they now go to the project that ran the tests.
