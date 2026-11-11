@@ -1,6 +1,8 @@
 package com.jakubjirak.flakytestdetector.ui
 
+import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.project.DumbAware
+import com.intellij.openapi.util.Disposer
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.wm.ToolWindow
 import com.intellij.openapi.wm.ToolWindowFactory
@@ -31,9 +33,16 @@ class FlakyTestToolWindowFactory : ToolWindowFactory, DumbAware {
         val actionsPanel = createActionsPanel(storage, flakyTestPanel)
         mainPanel.add(actionsPanel, BorderLayout.SOUTH)
 
-        storage.addListener {
-            updateSummaryLabel(storage, summaryLabel)
+        // Storage changes can come from background threads (retention cleanup): refresh on the EDT,
+        // and stop listening when the tool window goes away.
+        val listener: () -> Unit = {
+            ApplicationManager.getApplication().invokeLater({
+                updateSummaryLabel(storage, summaryLabel)
+                flakyTestPanel.refreshTable()
+            }, project.disposed)
         }
+        storage.addListener(listener)
+        Disposer.register(toolWindow.disposable) { storage.removeListener(listener) }
 
         val content = ContentFactory.getInstance().createContent(mainPanel, "Dashboard", false)
         toolWindow.contentManager.addContent(content)

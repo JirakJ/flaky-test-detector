@@ -13,26 +13,16 @@ a reliability score so you know which tests are stable and which need attention.
 <ul>
     <li><b>Automatic Tracking</b> — Records every test run (pass/fail/error/skip) automatically</li>
     <li><b>Flakiness Score</b> — Percentage-based reliability metric per test</li>
-    <li><b>Gutter Icons</b> — Reliability indicators next to @Test annotations</li>
-    <li><b>Dashboard</b> — Sortable table with sparkline stability visualizations</li>
-    <li><b>Quarantine Mode</b> — Isolate known-flaky tests from blocking development</li>
-    <li><b>One-Click Rerun</b> — Rerun any test directly from the dashboard</li>
-</ul>
-
-<ul>
-    <li>Unlimited tests and history retention</li>
-    <li>Flakiness trend charts</li>
-    <li>Git correlation (find the commit that broke a test)</li>
-    <li>Module and package-level aggregation</li>
-    <li>Auto-quarantine rules</li>
-    <li>Export reports (JSON, CSV, HTML)</li>
-    <li>CI/CD integration</li>
+    <li><b>Gutter Icons</b> — Reliability indicators on Java and Kotlin test methods</li>
+    <li><b>Dashboard</b> — Sortable, filterable table with last-10-runs sparkline and trend</li>
+    <li><b>Quarantine</b> — Mark known-flaky tests in the dashboard, manually or automatically above a threshold</li>
+    <li><b>Configurable</b> — Category thresholds, minimum runs and history retention</li>
 </ul>
 
 <h3>Requirements</h3>
 <ul>
-    <li>IntelliJ IDEA 2024.1+ (or any JetBrains IDE)</li>
-    <li>Any JetBrains-supported test framework</li>
+    <li>IntelliJ IDEA 2023.2+ or another JetBrains IDE with a test runner</li>
+    <li>Tests run from the IDE (results of the IDE's test runner are recorded)</li>
 </ul>
 
 <h3>Support</h3>
@@ -43,6 +33,8 @@ a reliability score so you know which tests are stable and which need attention.
 </p>]]></description>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends optional="true" config-file="flaky-java.xml">com.intellij.java</depends>
+    <depends optional="true" config-file="flaky-kotlin.xml">org.jetbrains.kotlin</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <projectService
@@ -80,23 +72,6 @@ a reliability score so you know which tests are stable and which need attention.
     </extensions>
 
     <actions>
-        <action id="com.jakubjirak.flakytestdetector.RerunFlakyTests"
-                class="com.jakubjirak.flakytestdetector.actions.RerunFlakyTestsAction"
-                text="Rerun Flaky Tests"
-                description="Rerun all tests with non-zero flakiness score"
-                icon="AllIcons.Actions.Rerun">
-            <keyboard-shortcut first-keystroke="alt shift F" keymap="$default"/>
-            <add-to-group group-id="ToolsMenu" anchor="last"/>
-        </action>
-
-        <action id="com.jakubjirak.flakytestdetector.QuarantineTest"
-                class="com.jakubjirak.flakytestdetector.actions.QuarantineTestAction"
-                text="Quarantine Test"
-                description="Toggle quarantine status on the selected test"
-                icon="AllIcons.Actions.Pause">
-            <add-to-group group-id="ToolsMenu" anchor="last"/>
-        </action>
-
         <action id="com.jakubjirak.flakytestdetector.ViewHistory"
                 class="com.jakubjirak.flakytestdetector.actions.ViewHistoryAction"
                 text="View Flaky Test History"
@@ -123,12 +98,8 @@ a reliability score so you know which tests are stable and which need attention.
             <li><b>Flakiness Score</b> - Calculates a percentage-based reliability score from test history</li>
             <li><b>Gutter Icons</b> - Color-coded reliability indicators next to @Test annotations in the editor</li>
             <li><b>Flaky Tests Dashboard</b> - Sortable table with sparkline visualizations of test stability</li>
-            <li><b>One-Click Rerun</b> - Quickly rerun any flaky test directly from the dashboard</li>
             <li><b>Quarantine Mode</b> - Mark known-flaky tests to prevent them from blocking your workflow</li>
             <li><b>Configurable Thresholds</b> - Set custom levels for suspicious, flaky, and highly unstable tests</li>
-            <li><b>Trend Charts</b> - Visualize flakiness trends over time with interactive charts</li>
-            <li><b>Git Correlation</b> - Detect which commit introduced test flakiness</li>
-            <li><b>Export Reports</b> - Generate JSON, CSV, and HTML reports for team analysis</li>
         </ul>
     ]]></change-notes>
 </idea-plugin>

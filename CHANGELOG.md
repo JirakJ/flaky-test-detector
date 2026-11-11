@@ -1,5 +1,18 @@
 # Changelog
 
+## [Unreleased]
+
+### Fixed
+- **Gutter icons never appeared**: the provider was not registered, and it looked tests up by simple class name while history used fully-qualified names. It is now registered for Java and Kotlin (K2-compatible) and matches correctly.
+- Results were stored in whichever project was opened first; they now go to the project that ran the tests.
+- Ignored tests are recorded as skipped instead of passed; parameterised invocations are grouped under their method.
+- The Suspicious / Flaky / Highly unstable thresholds and auto-quarantine settings had no effect; both are now applied.
+- History storage is thread-safe and the dashboard refreshes on the UI thread.
+
+### Removed
+- *Rerun Flaky Tests* (only logged a message) and *Quarantine Test* (toggled an arbitrary test) actions; quarantine is toggled from the dashboard.
+- Description items for features that do not exist (trend charts, git correlation, module aggregation, report export, CI/CD integration).
+
 ## [2026.8.0] - 2026-11-10
 
 ### Changed

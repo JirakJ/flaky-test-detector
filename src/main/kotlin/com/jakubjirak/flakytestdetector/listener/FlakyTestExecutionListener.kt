@@ -2,94 +2,76 @@ package com.jakubjirak.flakytestdetector.listener
 
 import com.intellij.execution.testframework.AbstractTestProxy
 import com.intellij.execution.testframework.TestStatusListener
-import com.intellij.openapi.diagnostic.Logger
-import com.intellij.openapi.project.ProjectManager
+import com.intellij.openapi.project.Project
 import com.jakubjirak.flakytestdetector.model.TestOutcome
 import com.jakubjirak.flakytestdetector.model.TestRunResult
 import com.jakubjirak.flakytestdetector.settings.FlakyTestSettings
+import com.jakubjirak.flakytestdetector.storage.AutoQuarantinePolicy
 import com.jakubjirak.flakytestdetector.storage.FlakyTestStorage
 
+/** Records the outcome of every leaf test when a test run finishes. */
 class FlakyTestExecutionListener : TestStatusListener() {
 
-    override fun testSuiteFinished(root: AbstractTestProxy?) {
-        if (root == null) return
+    override fun testSuiteFinished(root: AbstractTestProxy?) = Unit
 
+    // The project-aware overload: results go to the project that ran the tests,
+    // not to whichever project happens to be open first.
+    override fun testSuiteFinished(root: AbstractTestProxy?, project: Project?) {
+        if (root == null || project == null || project.isDisposed) return
         val settings = FlakyTestSettings.getInstance()
         if (!settings.enabled) return
-
-        val openProjects = ProjectManager.getInstance().openProjects
-        if (openProjects.isEmpty()) return
-
-        val project = openProjects.first()
+        val policy = AutoQuarantinePolicy(settings.autoQuarantine, settings.autoQuarantineThreshold, settings.minimumRuns)
         val storage = FlakyTestStorage.getInstance(project)
-
-        processTestNode(root, storage)
-        LOG.info("Flaky Test Detector: recorded results from test suite")
+        val now = System.currentTimeMillis()
+        root.allTests.filter { it.isLeaf }.forEach { record(it, storage, policy, now) }
     }
 
-    private fun processTestNode(node: AbstractTestProxy, storage: FlakyTestStorage) {
-        if (node.isLeaf) {
-            recordLeafTest(node, storage)
-        } else {
-            node.children.forEach { child ->
-                processTestNode(child, storage)
-            }
-        }
-    }
-
-    private fun recordLeafTest(test: AbstractTestProxy, storage: FlakyTestStorage) {
-        val testName = test.name ?: return
-        val locationUrl = test.locationUrl
-
-        val className = extractClassName(locationUrl, testName)
-        val methodName = extractMethodName(locationUrl, testName)
-        val testId = "$className.$methodName"
-
-        val outcome = mapOutcome(test)
-        val duration = test.duration ?: 0L
-
+    private fun record(test: AbstractTestProxy, storage: FlakyTestStorage, policy: AutoQuarantinePolicy, now: Long) {
+        val id = TestIds.parse(test.locationUrl, test.name ?: return) ?: return
+        val outcome = TestIds.outcome(
+            passed = test.isPassed, ignored = test.isIgnored, interrupted = test.isInterrupted, defect = test.isDefect
+        )
         val result = TestRunResult(
-            timestamp = System.currentTimeMillis(),
+            timestamp = now,
             outcome = outcome,
-            durationMs = duration,
-            stackTrace = if (outcome == TestOutcome.FAIL || outcome == TestOutcome.ERROR) {
-                test.errorMessage
-            } else {
-                null
-            }
+            durationMs = test.duration ?: 0L,
+            stackTrace = test.errorMessage?.takeIf { outcome == TestOutcome.FAIL || outcome == TestOutcome.ERROR },
         )
-
-        storage.recordTestResult(
-            testId = testId,
-            className = className,
-            methodName = methodName,
-            result = result
-        )
+        storage.recordTestResult(id.key, id.className, id.methodName, result, policy = policy)
     }
+}
 
-    private fun mapOutcome(test: AbstractTestProxy): TestOutcome {
-        return when {
-            test.isPassed -> TestOutcome.PASS
-            test.isInterrupted -> TestOutcome.SKIP
-            test.isDefect -> TestOutcome.FAIL
-            else -> TestOutcome.ERROR
+/** Identity of a test method as recorded in history. */
+data class TestId(val className: String, val methodName: String) {
+    /** The id under which the test's history is stored. */
+    val key: String get() = "$className.$methodName"
+}
+
+/** Pure helpers for turning test-runner data into history entries. */
+object TestIds {
+
+    /**
+     * Parses a test location such as `java:test://com.example.FooTest/testBar` (JUnit/TestNG,
+     * Java or Kotlin). Falls back to `Class.method` style [testName] when there is no URL.
+     * Parameterised invocations (`testBar(int)[2]`) are folded into their method.
+     */
+    fun parse(locationUrl: String?, testName: String): TestId? {
+        val path = locationUrl?.substringAfter("://", "")?.takeIf { it.isNotEmpty() }
+        val (cls, method) = if (path != null && '/' in path) {
+            path.substringBeforeLast('/') to path.substringAfterLast('/')
+        } else {
+            testName.substringBeforeLast('.', "") to testName.substringAfterLast('.')
         }
+        val methodName = method.substringBefore('(').substringBefore('[').trim()
+        val className = cls.replace('/', '.').trim()
+        if (className.isEmpty() || methodName.isEmpty()) return null
+        return TestId(className, methodName)
     }
 
-    private fun extractClassName(locationUrl: String?, testName: String): String {
-        if (locationUrl == null) return testName.substringBeforeLast(".", testName)
-        val withoutProtocol = locationUrl.substringAfter("://", locationUrl)
-        return withoutProtocol.substringBeforeLast("/", withoutProtocol)
-            .replace("/", ".")
-    }
-
-    private fun extractMethodName(locationUrl: String?, testName: String): String {
-        if (locationUrl == null) return testName.substringAfterLast(".", testName)
-        val withoutProtocol = locationUrl.substringAfter("://", locationUrl)
-        return withoutProtocol.substringAfterLast("/", testName)
-    }
-
-    companion object {
-        private val LOG = Logger.getInstance(FlakyTestExecutionListener::class.java)
+    fun outcome(passed: Boolean, ignored: Boolean, interrupted: Boolean, defect: Boolean): TestOutcome = when {
+        ignored || interrupted -> TestOutcome.SKIP
+        passed -> TestOutcome.PASS
+        defect -> TestOutcome.FAIL
+        else -> TestOutcome.ERROR
     }
 }

@@ -126,4 +126,31 @@ class FlakinessCalculatorTest {
             calculator.calculateTrend(results)
         )
     }
+
+    private fun runs(vararg outcomes: TestOutcome) = outcomes.map { TestRunResult(outcome = it) }
+
+    @Test
+    fun `trend detects worsening and improving windows`() {
+        val p = TestOutcome.PASS
+        val f = TestOutcome.FAIL
+        assertEquals(
+            FlakinessCalculator.TrendDirection.WORSENING,
+            calculator.calculateTrend(runs(p, p, p, p, p, p, f, p, f, p))
+        )
+        assertEquals(
+            FlakinessCalculator.TrendDirection.IMPROVING,
+            calculator.calculateTrend(runs(p, f, p, f, p, p, p, p, p, p))
+        )
+        assertEquals(
+            FlakinessCalculator.TrendDirection.STABLE,
+            calculator.calculateTrend(runs(p, f, p, f, p, f, p, f, p, f))
+        )
+    }
+
+    @Test
+    fun `instance and static scores agree`() {
+        val results = runs(TestOutcome.PASS, TestOutcome.FAIL, TestOutcome.FAIL)
+        assertEquals(FlakinessCalculator.score(results), calculator.calculateScore(results))
+        assertEquals(50.0, FlakinessCalculator.score(results))
+    }
 }

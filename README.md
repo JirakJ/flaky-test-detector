@@ -2,7 +2,7 @@
 
 [![Version](https://img.shields.io/badge/version-2026.8.0-blue)](https://plugins.jetbrains.com/plugin/30205)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
-[![Build](https://github.com/JirakJ/flaky-test-detector/workflows/Build/badge.svg)](https://github.com/JirakJ/flaky-test-detector/actions)
+[![Build](https://github.com/JirakJ/flaky-test-detector/actions/workflows/verify.yml/badge.svg)](https://github.com/JirakJ/flaky-test-detector/actions/workflows/verify.yml)
 
 **Detect, track, and visualize flaky tests directly in your JetBrains IDE.**
 
@@ -14,18 +14,12 @@ Flaky Test Detector automatically monitors your test runs, calculates flakiness 
 
 - 🔍 **Automatic Test History Tracking** — records every test run result (pass/fail/error/skip)
 - 📊 **Flakiness Score Calculation** — percentage-based score showing test reliability
-- 🎯 **Gutter Icons** — colored icons next to `@Test` annotations showing flakiness level
-- 📋 **Flaky Tests Dashboard** — tool window with table, sparkline visualization, and trend indicators
-- 🔄 **Rerun Flaky Tests** — one-click rerun of all known flaky tests
-- 🚫 **Quarantine Mode** — mark known-flaky tests to distinguish from real failures
+- 🎯 **Gutter Icons** — colored icons on Java and Kotlin `@Test` / `@ParameterizedTest` / `@RepeatedTest` methods that are not stable
+- 📋 **Flaky Tests Dashboard** — tool window with a sortable, filterable table, last-10-runs sparkline and trend (improving / stable / worsening)
+- 🚫 **Quarantine** — mark known-flaky tests in the dashboard (a label for triage; it does not change how tests run)
+- 🤖 **Auto-Quarantine** — optionally quarantine tests automatically once they reach a score threshold
 - ⚙️ **Configurable Thresholds** — customize what counts as "suspicious", "flaky", or "highly unstable"
-- 📊 **Flakiness Trend Charts** — visualize how test stability changes over time
-- 📦 **Module-level Aggregation** — see flakiness by module/package
-- 🏥 **Suite Health Score** — overall percentage of stable tests
-- 📤 **Export Reports** — JSON, CSV, HTML exports for CI/team sharing
-- 🔗 **Git Correlation** — detect which commit made a test flaky
-- 🤖 **Auto-Quarantine Rules** — automatically quarantine tests above threshold
-- ♾️ **Unlimited** tracked tests and history retention
+- 🧹 **History Retention** — results older than the configured number of days are dropped on project open
 
 ---
 
@@ -47,10 +41,10 @@ Flaky Test Detector automatically monitors your test runs, calculates flakiness 
 
 ## 🚀 Quick Start
 
-1. **Run your tests** as usual (JUnit, TestNG, Pytest, Jest — any framework)
+1. **Run your tests** from the IDE as usual (any framework that reports to the IDE test runner)
 2. **Open the Flaky Tests tool window** (View → Tool Windows → Flaky Tests)
 3. **Run tests again** — after 3+ runs, flakiness scores appear
-4. **Check gutter icons** — colored indicators appear next to `@Test` annotations
+4. **Check gutter icons** — colored indicators appear on unstable Java/Kotlin test methods
 
 ---
 
@@ -61,13 +55,13 @@ Flaky Test Detector automatically monitors your test runs, calculates flakiness 
 | Setting | Default | Description |
 |---------|:-------:|-------------|
 | Enable plugin | ✅ | Master switch |
-| History retention | 90 days | How long to keep test results |
-| Minimum runs for scoring | 3 | Tests need N runs before getting a score |
-| Suspicious threshold | 15% | Score above this = ⚠️ suspicious |
-| Flaky threshold | 30% | Score above this = 🔶 flaky |
+| History retention | 30 days | How long to keep test results |
+| Minimum runs for scoring | 3 | Gutter icons and auto-quarantine need N runs |
+| Suspicious threshold | 1% | Score at or above this = ⚠️ suspicious |
+| Flaky threshold | 15% | Score above this = 🔶 flaky |
 | Highly unstable threshold | 50% | Score above this = 🔴 highly unstable |
 | Gutter icons | ✅ | Show flakiness icons in editor |
-| Auto-quarantine | ❌ | Auto-quarantine above threshold |
+| Auto-quarantine | ❌ | Quarantine tests whose score reaches the auto-quarantine threshold (default 80%) |
 
 ---
 
@@ -81,20 +75,20 @@ score = (result_changes / (total_runs - 1)) × 100%
 
 Where `result_changes` = number of times the outcome differs from the previous run.
 
+With the default thresholds:
+
 | Score | Category | Icon |
 |:-----:|----------|:----:|
 | 0% | Stable | ✅ |
 | 1-15% | Suspicious | ⚠️ |
-| 16-50% | Flaky | 🔶 |
-| 51-100% | Highly Unstable | 🔴 |
+| >15-50% | Flaky | 🔶 |
+| >50-100% | Highly Unstable | 🔴 |
 
 ---
 
-## ⌨️ Keyboard Shortcuts
+## 🧭 Actions
 
-| Action | Shortcut |
-|--------|----------|
-| Rerun Flaky Tests | `Alt+Shift+F` |
+*Tools → View Flaky Test History* opens the dashboard; *Tools → Clear Flaky Test History* deletes all recorded results for the project.
 
 ---
 
@@ -104,6 +98,7 @@ Where `result_changes` = number of times the outcome differs from the previous r
 git clone https://github.com/JirakJ/flaky-test-detector.git
 cd flaky-test-detector
 ./gradlew buildPlugin
+./gradlew detekt test   # static analysis + unit tests
 ```
 
 The plugin ZIP will be in `build/distributions/`.
